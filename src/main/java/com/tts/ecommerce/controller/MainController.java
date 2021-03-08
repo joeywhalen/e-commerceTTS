@@ -18,21 +18,25 @@ public class MainController {
 
   @GetMapping(value = "/")
   public String main() {
+
     return "main";
   }
 
   @ModelAttribute(value = "products")
   public List<Products> products() {
+
     return productService.findAll();
   }
 
   @ModelAttribute(value = "categories")
   public List<String> categories() {
+
     return productService.findDistinctCategories();
   }
 
   @ModelAttribute(value = "brands")
   public List<String> brands() {
+
     return productService.findDistinctBrands();
   }
 
@@ -46,10 +50,9 @@ public class MainController {
 
   @GetMapping(value = "/about")
   public String about() {
+
     return "about";
   }
-
-
 
 
 }
