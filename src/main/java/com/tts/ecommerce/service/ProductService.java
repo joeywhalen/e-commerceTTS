@@ -22,7 +22,7 @@ public class ProductService {
   }
 
   public List<String> findDistinctBrands() {
-    return productRepository.findDistinctCategories();
+    return productRepository.findDistinctBrands();
   }
 
   public List<String> findDistinctCategories() {
@@ -48,4 +48,3 @@ public class ProductService {
         return productRepository.findByBrandAndOrCategory(brand, category);
     }
   }
-
