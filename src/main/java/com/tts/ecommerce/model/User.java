@@ -26,6 +26,7 @@ import java.util.Set;
 @Entity
 // This is the user class that allows the user to be created.
 public class User implements UserDetails {
+  // @Transient makes it so those aren't persisted in the database, as they are hard coded.
   @Transient
   private boolean accountNonExpired = true;
   @Transient
