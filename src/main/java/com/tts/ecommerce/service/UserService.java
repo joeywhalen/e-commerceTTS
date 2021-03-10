@@ -27,6 +27,7 @@ public class UserService implements UserDetailsService {
 
   public void saveNew(User user) {
     user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
+    userRepository.save(user);
   }
 
   public void saveExisting(User user) {
@@ -46,9 +47,7 @@ public class UserService implements UserDetailsService {
   @Override
   public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
     User user = findByUsername(username);
-    if (user == null) throw new UsernameNotFoundException("User not found");
+    if (user == null) throw new UsernameNotFoundException("Username not found.");
     return user;
   }
-
-
 }
