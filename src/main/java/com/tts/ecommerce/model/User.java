@@ -44,9 +44,9 @@ public class User implements UserDetails {
   private Long id;
 
   //Variables
-  @Email(message = "Please provide a valid email")
-  @NotEmpty(message = "Please provide an email")
-  private String email;
+//  @Email(message = "Please provide a valid email")
+//  @NotEmpty(message = "Please provide an email")
+//  private String email;
 
   @NotEmpty(message = "Please provide a username")
   @Length(min = 3, message = "Your username must have at least 3 characters")
@@ -59,16 +59,15 @@ public class User implements UserDetails {
   @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
   private String password;
 
-  @NotEmpty(message = "Please provide your first name")
-  private String firstName;
-
-  @NotEmpty(message = "Please provide your last name")
-  private String lastName;
-
+//  @NotEmpty(message = "Please provide your first name")
+//  private String firstName;
+//
+//  @NotEmpty(message = "Please provide your last name")
+//  private String lastName;
   private int active;
-
-  @CreationTimestamp
-  private Date createdAt;
+//
+//  @CreationTimestamp
+//  private Date createdAt;
 
   // Start of the sql queries to line the user_id to the roles and the following.
   @ManyToMany(cascade = CascadeType.ALL)
